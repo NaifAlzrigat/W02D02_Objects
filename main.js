@@ -328,3 +328,42 @@ const employeeOne = {
 
 
 //Q4- Write a function isValidUser that accepts an object representing login information and returns true if the user is valid otherwise return false. Read the comments for more information.
+// things to validate:
+// 1- length of the email is greater than or equal to 6
+// 2- length of the password is greater than or equal to 8
+// 3- email contains `@` and `.com`
+// 4- the user must be in the users object
+// 5- both of the passwords match
+// 6- when you compare information make sure to reference
+//the users object and access the value form there
+const users = {
+    mrpotato: {
+      email: "mr.potato@gmail.com",
+      password: "LonelyPotato",
+    },
+    thewiseman: {
+      email: "wiseMan9999@gmail.com",
+      password: "12345678",
+    },
+  };
+  
+  const isValidUser = function (loginInfo) {
+    if(loginInfo.email.length>=6&&loginInfo.password.length>=8){
+        if(loginInfo.email.includes("@")&&".com"){
+            if((loginInfo.username===users[0]||loginInfo.username===users[1])&&(loginInfo.password===users[0].password||loginInfo.password===users[1].password)){
+                    return true
+            }
+        }
+    }else{return false}
+  };
+  
+  //Q5- Write a function compareKeys that accepts two objects
+  //and returns true if the key names and their order match.
+  //Return false if they don't.
+  const compareKeys = function (objectOne, objectTwo) {
+    const keys1 = Object.keys(objectOne);
+    const keys2 = Object.keys(objectTwo);
+    if(keys1.length !== keys2.length){
+        return false
+    }else{return true}
+  };
