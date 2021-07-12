@@ -226,4 +226,105 @@ const keyInObject = function (object, key) {
     }else{
         false
     }
+  };//why else is undefinde
+
+
+
+//============> Extra  Practice <============
+
+//Q1- Check the following object and solve the requirements.
+// HINT: read about the delete operator
+const family = {
+    name: "John",
+    children: [
+      {
+        name: "Bill",
+        children: [
+          {
+            name: "Mark",
+            children: [],
+          },
+          {
+            name: "Sarah",
+            children: [
+              {
+                name: "Smith",
+                children: [],
+              },
+              {
+                name: "Stan",
+                children: [],
+              },
+            ],
+          },
+          {
+            name: "Samuel",
+            children: [],
+          },
+        ],
+      },
+      {
+        name: "Jane",
+        children: [],
+      },
+    ],
   };
+  
+
+// Access the value of Sarah's children and the value of Samuel's children.
+family.children[0].children[1].children
+family.children[1].children
+
+// Add a child for Samuel named Sam that has two children Marry and Gwen.
+family.children[1].children.name="Sam "
+family.children[1].children.children={name:"Marry"}
+family.children[1].children.children[1]={name:"Gwen"}
+// Delete the children property from the people who don't have children.
+// if(family.children[0].object.keys("children")[0]===""||family.children[1].object.keys("children")[1]===""){
+//     return 0
+// }
+
+//Q2- Write a factory function createIceCream that accepts Three
+//arguments, coneType, flavour, and topping, and returns an 
+//object representing the ice-cream.
+const createIceCream = function (coneType, iceCreamFlavour, topping) {
+   const ice= {coneType: coneType, flavour: iceCreamFlavour, topping: topping}
+   return ice
+  };
+
+
+//Q3- Try the following code and explain the results
+const employeeOne = {
+    id: 0,
+    name: "John",
+    position: "",
+  };
+  
+  const employeeTwo = {
+    id: 1,
+    name: "Jane",
+    position: "Developer",
+  };
+  
+  if (employeeOne.id) {
+    console.log(employeeOne.name);
+  }//will not return the value of name because the value of if is false
+  
+  if (employeeTwo.id) {
+    console.log(employeeOne.name);
+  } //will return the value of name
+  
+  if (employeeOne.position) {
+    console.log(employeeOne.name);
+  }//will not return the value of name because the value of if is false
+  
+  if (employeeTwo.position) {
+    console.log(employeeOne.name);
+  } ////will return the value of name
+  
+  if (employeeOne.salary) {
+    console.log(employeeOne.name);
+  }//will not return the value of name because the value of if is false (salary not defind)
+
+
+//Q4- Write a function isValidUser that accepts an object representing login information and returns true if the user is valid otherwise return false. Read the comments for more information.
