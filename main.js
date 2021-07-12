@@ -83,4 +83,147 @@ Object[ObjectValue]
 const object = {objectKey:ObjectValue};
 
 
-//============> Pulse Check <============
+//============> Practice <============
+
+//Q1- Figure out the syntax errors in the following, and fix them.
+const person_1 = {name:"john", age:20} //curly brackets && john in qouts
+
+const car = {brand: "Toyota", model: 2020} //Clone
+
+const employee ={name: "Jane", position: "developer"} //developer in qouts
+
+//Q2- Check the following objects and solve the requirements.
+const person_2 = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 24,
+  };
+
+// Access the age property.
+person_2.age
+// Modify the person's age to be 23 years old.
+person_2.age=23
+// Add a property called work with the value of an object with two keys, position and salary.
+person_2.work={position:"developer",salary:700}
+//________________________________________________________
+const employees = [
+    {
+      id: 1,
+      name: {
+        first: "John",
+        last: "Doe",
+      },
+      position: "Designer",
+    },
+    {
+      id: 2,
+      name: {
+        first: "Jane",
+        last: "Doe",
+      },
+      position: "Engineer",
+    },
+  ];
+
+//   Access the first name property of both employees.
+    employees[0].name.first
+    employees[1].name.first
+// Add an employee object with your name and the position of full-stack developer.
+    employees[2]={id:3,name:{first: "Naif",last: "ALZriqat",},position: "full-stack developer",}
+
+//__________________________________________________________
+const cars = {
+    toyota: {
+      name: "prius",
+      model: 2019,
+    },
+    nissan: {
+      name: "leaf",
+      model: 2020,
+    },
+  };
+//   Access the model value of both cars.
+    cars.toyota.model
+    cars.nissan.model
+// Change the prius model from 2019 to 2020.
+cars.toyota.model=2020
+// Add a new car of your choice.
+cars.mercedes={name:"maybach", model:2020}
+// Add a property isAutomatic for all three cars.
+cars.toyota.isAutomatic=true
+cars.nissan.isAutomatic=false
+cars.mercedes.isAutomatic=true
+
+//Q3- Write a factory function createUser that accepts two string
+// arguments, firstName and lastName, returning an object
+// representing the user.
+
+const createUser = function (firstName, lastName) {
+    const user={firstName:firstName,lastName:lastName}
+    return user
+  };
+
+//Q4- Write a factory function createCar that accepts three string
+//arguments, brand, name, and color, returning an object representing the car.
+
+const createCar = function (brand, name, color) {
+    const car={brand: brand, name: name, color: color}
+    return car
+  };
+
+//Q5- Write a function getFullName that accepts an object representing a person and
+//returns that person's full name in a string.
+
+const getFullName = function (person) {
+    return person.first+" "+person.middle+" "+person.last
+  };
+  
+//Q6- Write a function olderThan that accepts two objects, personOne
+//and personTwo, and returns a string that represent who is older than the other.
+const olderThan = function (personOne, personTwo) {
+    if(personOne.age>personTwo.age){
+        return personOne.name+" is older than "+ personTwo.name
+    }else{
+        return personTwo.name+" is older than "+ personOne.name
+    }
+  };
+
+
+//Q7- Write a function isPropertyOf that accepts a string
+//and an object and returns true if the string is a property of
+//the object. Return false if it isn't.
+
+const isPropertyOf = function (string, object) {
+    if(object.hello===string)
+    {
+        return true
+    }else{ return false}
+  };
+
+//Q8- Write a function numberOfKeys that accepts an object and
+//returns the number of keys present in the object.
+const numberOfKeys = function (object) {
+    return Object.keys(object).length
+  };
+  
+//Q9- Write a function valuesToString that accepts an object and
+//returns a string of all the values from the object separated
+//by an empty space.
+const valuesToString = function (object) {
+    const arr= Object.values(object)
+   return arr.join(" ")
+  };
+
+
+//Q10- Write a function keyInObject that accepts two arguments,
+//object and key, and checks if the key is present within the
+//object. Return true if the key is present and false if it is absent.
+
+const keyInObject = function (object, key) {
+    
+    if(object.hasOwnProperty(key)){
+        return true
+    }else{
+        false
+    }
+  };
